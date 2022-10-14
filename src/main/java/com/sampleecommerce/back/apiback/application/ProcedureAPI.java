@@ -1,7 +1,7 @@
-package com.sampleecommerce.back.apiback.infra.inputadapter;
+package com.sampleecommerce.back.apiback.application;
 
-import com.sampleecommerce.back.apiback.domain.Procedure;
-import com.sampleecommerce.back.apiback.infra.inputport.ProcedureInputPort;
+import com.sampleecommerce.back.apiback.domain.entities.Procedure;
+import com.sampleecommerce.back.apiback.domain.usecases.ProcedureInputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

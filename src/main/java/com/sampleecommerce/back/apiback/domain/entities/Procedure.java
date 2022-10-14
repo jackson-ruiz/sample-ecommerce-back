@@ -1,4 +1,4 @@
-package com.sampleecommerce.back.apiback.domain;
+package com.sampleecommerce.back.apiback.domain.entities;
 
 public class Procedure {
     private int id;

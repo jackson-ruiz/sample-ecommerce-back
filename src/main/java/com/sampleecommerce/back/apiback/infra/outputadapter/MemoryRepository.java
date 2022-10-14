@@ -1,7 +1,7 @@
 package com.sampleecommerce.back.apiback.infra.outputadapter;
 
-import com.sampleecommerce.back.apiback.domain.Procedure;
-import com.sampleecommerce.back.apiback.infra.outputport.EntityRepository;
+import com.sampleecommerce.back.apiback.domain.entities.Procedure;
+import com.sampleecommerce.back.apiback.domain.repository.EntityRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

@@ -1,8 +1,7 @@
-package com.sampleecommerce.back.apiback.application;
+package com.sampleecommerce.back.apiback.domain.usecases;
 
-import com.sampleecommerce.back.apiback.domain.Procedure;
-import com.sampleecommerce.back.apiback.infra.inputport.ProcedureInputPort;
-import com.sampleecommerce.back.apiback.infra.outputport.EntityRepository;
+import com.sampleecommerce.back.apiback.domain.entities.Procedure;
+import com.sampleecommerce.back.apiback.domain.repository.EntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
