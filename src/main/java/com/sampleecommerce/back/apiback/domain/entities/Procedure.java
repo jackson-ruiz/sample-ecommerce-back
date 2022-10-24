@@ -1,16 +1,30 @@
 package com.sampleecommerce.back.apiback.domain.entities;
 
-public class Procedure {
-    private int id;
-    private String procedureType;
-    private String applicantId;
-    private String description;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
-    public Procedure(int id, String procedureType, String applicantId, String description) {
+import java.time.LocalDateTime;
+
+@Entity
+public class Procedure {
+    @Id
+    @GeneratedValue
+    private int id;
+    private String procedure_type;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Applicant applicant;
+    private String description;
+    private LocalDateTime creation_date;
+
+    protected Procedure(){}
+    public Procedure(int id, String procedure_type, Applicant applicant, String description) {
+        super();
         this.id = id;
-        this.procedureType = procedureType;
-        this.applicantId = applicantId;
+        this.procedure_type = procedure_type;
+        this.applicant = applicant;
         this.description = description;
+        this.creation_date = LocalDateTime.now();
     }
 
     public int getId() {
@@ -21,20 +35,20 @@ public class Procedure {
         this.id = id;
     }
 
-    public String getProcedureType() {
-        return procedureType;
+    public String getProcedure_type() {
+        return procedure_type;
     }
 
-    public void setProcedureType(String procedureType) {
-        this.procedureType = procedureType;
+    public void setProcedure_type(String procedure_type) {
+        this.procedure_type = procedure_type;
     }
 
-    public String getApplicantId() {
-        return applicantId;
+    public Applicant getApplicant() {
+        return applicant;
     }
 
-    public void setApplicantId(String applicantId) {
-        this.applicantId = applicantId;
+    public void setApplicant(Applicant applicant) {
+        this.applicant = applicant;
     }
 
     public String getDescription() {
@@ -45,12 +59,19 @@ public class Procedure {
         this.description = description;
     }
 
+    public LocalDateTime getCreation_date() {
+        return creation_date;
+    }
+
+    public void setCreation_date(LocalDateTime creation_date) {
+        this.creation_date = creation_date;
+    }
+
     @Override
     public String toString() {
         return "Procedure{" +
                 "id=" + id +
-                ", procedureType='" + procedureType + '\'' +
-                ", applicantId='" + applicantId + '\'' +
+                ", procedureType='" + procedure_type + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }
